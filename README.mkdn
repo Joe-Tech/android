@@ -43,7 +43,7 @@ Create working directory
     cd ~/revolution
 
 
-Revolution AOSP ROM Source
+Revolution AOSP ROM Source.
 ------------------------
 
     repo init -u git://github.com/Joe-Tech/android.git -b cm-12.0
