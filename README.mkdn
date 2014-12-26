@@ -1,0 +1,73 @@
+Revolution AOSP Source
+===================
+To get started with Revolution AOSP ROM, you'll need to get
+familiar with [Git and Repo](http://source.android.com/source/version-control.html).
+
+Part 1 - Setting Up The Build Environment
+----------------------
+Install Java JDK
+----------------------
+sudo add-apt-repository ppa:webupd8team/java
+
+sudo apt-get update
+
+sudo apt-get install oracle-java6-installer
+
+
+Installing required packages
+------------------------------------
+sudo apt-get install git gnupg flex bison gperf build-essential \
+  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
+  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos \
+  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+  
+  
+Setup Repo
+-----------------
+   mkdir -p ~/bin
+   
+   PATH=~/bin:$PATH
+   
+Enter the following to download the "repo"
+
+    curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+
+    chmod a+x ~/bin/repo
+
+Create working directory
+----------------------------
+
+    mkdir ~/revolution
+    
+    cd ~/revolution
+
+
+Revolution AOSP ROM Source
+------------------------
+
+    repo init -u git://github.com/Joe-Tech/android.git -b cm-12.0
+
+    repo sync
+    
+
+Time To start the process 
+--------------------------
+
+
+
+    . build/envsetup.sh
+
+    lunch
+
+Enter the number of the build you want to start and press enter
+
+Build the Code:
+
+    brunch your device code
+
+
+
+NOTE:if you get error: Exited sync due to fetch errors
+
+Simply re-run repo again with repo sync -f -j10
