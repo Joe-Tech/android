@@ -3,8 +3,19 @@ Revolution AOSP Source
 To get started with Revolution AOSP ROM, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/version-control.html).
 
-Part 1 - Setting Up The Build Environment
-----------------------
+Part 1 Setting up Bashrc
+---------------------------
+sudo gedit ~/.bashrc
+
+Add this at the very bottom of the file
+
+export PATH=${PATH}:~/bin
+
+Save, then exit
+
+
+Part 2 - Setting Up The Build Environment
+-----------------------------------------
 Install Java JDK
 ----------------------
 sudo add-apt-repository ppa:webupd8team/java
@@ -56,15 +67,17 @@ Time To start the process
 
 
 
-    . build/envsetup.sh
+    source build/envsetup.sh 
 
-    lunch
-
-Enter the number of the build you want to start and press enter
+    "breakfast" your device code 
+    
+    export USE_CCACHE=1
+    
+    croot
 
 Build the Code:
 
-    brunch your device code
+   "brunch" your device code
 
 
 
