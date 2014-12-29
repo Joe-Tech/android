@@ -5,11 +5,11 @@ familiar with [Git and Repo](http://source.android.com/source/version-control.ht
 
 Part 1 Setting up Bashrc
 ---------------------------
-sudo gedit ~/.bashrc
+(code) sudo gedit ~/.bashrc
 
 Add this at the very bottom of the file
 
-export PATH=${PATH}:~/bin
+(code) export PATH=${PATH}:~/bin
 
 Save, then exit
 
@@ -18,46 +18,46 @@ Part 2 - Setting Up The Build Environment
 -----------------------------------------
 Install Java JDK
 ----------------------
-sudo add-apt-repository ppa:webupd8team/java
+(code) sudo add-apt-repository ppa:webupd8team/java
 
-sudo apt-get update
+(code) sudo apt-get update
 
-sudo apt-get install oracle-java6-installer
+(code) sudo apt-get install oracle-java6-installer
 
 
 Installing required packages
 ------------------------------------
-sudo apt-get install git gnupg flex bison gperf build-essential \
-  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
-  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
-  libgl1-mesa-dev g++-multilib mingw32 tofrodos \
-  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+(code) sudo apt-get install git gnupg flex bison gperf build-essential \
+       zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
+      libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
+      libgl1-mesa-dev g++-multilib mingw32 tofrodos \
+      python-markdown libxml2-utils xsltproc zlib1g-dev:i386
   
   
 Setup Repo
 -----------------
-   mkdir -p ~/bin
+ (code)  mkdir -p ~/bin
    
-   PATH=~/bin:$PATH
+ (code)   PATH=~/bin:$PATH
    
 Enter the following to download the "repo"
 
-    curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+ (code)  curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 
-    chmod a+x ~/bin/repo
+ (code)  chmod a+x ~/bin/repo
 
 Create working directory
 ----------------------------
 
-    mkdir ~/revolution
+ (code)  mkdir ~/revolution
     
-    cd ~/revolution
+  (code)  cd ~/revolution
 
 
 Revolution AOSP ROM Source.
 ------------------------
 
-    repo init -u git://github.com/Joe-Tech/android.git -b cm-12.0
+  (code)    repo init -u git://github.com/Joe-Tech/android.git -b cm-12.0
 
     repo sync
     
@@ -65,20 +65,29 @@ Revolution AOSP ROM Source.
 Time To start the process 
 --------------------------
 
-
-
-    source build/envsetup.sh 
-
-    "breakfast" your device code 
     
-    export USE_CCACHE=1
+    Step 3 Extract Proprietary Blobs
+    ---------------------------------
     
-    croot
+    You will need to download a CyanogenMod ROM for your device
+    Then make a folder on your home directory, rename it to original, then extract the ROM zip to that folder
+    now go on terminal and type the following code with your device name.
+    
+  (code)  cd ~/revolution/device/manifacturer/your device code
+    
+  (code)  ./extract-files.sh ~/original
+    
+  (code)  source build/envsetup.sh 
+
+  (code)   "breakfast" your device code  
+    
+  (code)  export USE_CCACHE=1
+    
+  (code)  croot
 
 Build the Code:
-
-   "brunch" your device code
-
+-----------------
+ (code)   "brunch" your device code
 
 
 NOTE:if you get error: Exited sync due to fetch errors
